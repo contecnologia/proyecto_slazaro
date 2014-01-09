@@ -1,1 +1,3 @@
 /slazaro/slazaro/settings.py
+*.swp
+*.pyc
