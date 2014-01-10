@@ -5,7 +5,7 @@ from blog.models import Categoria, Tag, Post, Comentario
 
 class PostAdmin(admin.ModelAdmin):
 
-	fieldsets = [
+	fieldsets          = [
 		(
 			None,
 			{
@@ -31,12 +31,12 @@ class PostAdmin(admin.ModelAdmin):
 			}
 		),
 	]
-	list_display = ('titulo', 'usuario', 'categoria', 'estado', 'creado', 'modificado')
-	list_editable = ('estado',)
-	list_filter = ('categoria__nombre', 'estado')
-	search_fields = ('titulo', 'contenido', 'categoria__nombre', 'usuario__first_name', 'usuario__last_name',)
+	list_display       = ('titulo', 'usuario', 'categoria', 'estado', 'creado', 'modificado')
+	list_editable      = ('estado',)
+	list_filter        = ('categoria__nombre', 'estado')
+	search_fields      = ('titulo', 'contenido', 'categoria__nombre', 'usuario__first_name', 'usuario__last_name',)
 	filter_horizontal  = ('tags',)
-	readonly_fields = ('creado', 'modificado')
+	readonly_fields    = ('creado', 'modificado')
 
 
 	def save_model(self, request, obj, form, change):
