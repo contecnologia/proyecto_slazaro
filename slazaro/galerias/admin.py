@@ -11,7 +11,9 @@ class ImagenesInline(admin.TabularInline):
 
 class GaleriaAdmin(admin.ModelAdmin):
 
-	inlines = [ImagenesInline]
+	fields          = ('nombre', 'descripcion', 'post',)
+	inlines         = [ImagenesInline]
+	raw_id_fields   = ('post',)
 
 
 admin.site.register(Galeria, GaleriaAdmin)

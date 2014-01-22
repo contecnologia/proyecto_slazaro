@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="es-MX">
+<head>
+	<meta charset="UTF-8">
+	<title>San Lazaro</title>
+	<!-- Hojas de Estilo -->
+	<link rel="stylesheet" href="{{STATIC_URL}}css/main.css">
+	<!-- Hojas de Estilo por Página -->
+	{% block css %}
+	{% endblock %}
+	<!-- Scripts General -->
+	<script src="{{STATIC_URL}}js/jquery-1.9.0.min.js"></script>
+	<!-- Scripts Top -->
+	{% block scripts_top %}
+	{% endblock %}
+</head>
+<body>
+	<header class="main">
+		<h1 class="logo">San Lazaro</h1>
+		<nav class="main">
+			<ul>
+				<li class="left"><a href="#">Inicio</a></li>
+				<li class="left"><a href="#">Miembros</a></li>
+				<li class="left"><a href="#">Testimonios</a></li>
+				<li class="right"><a href="#">Contacto</a></li>
+				<li class="right"><a href="#">Donaciones</a></li>
+				<li class="right"><a href="#">Blog</a></li>
+			</ul>
+		</nav>
+	</header>
+	<section class="main">
+		{% block main_content %}
+		{% endblock %}
+	</section>
+	<!-- Scripts Bottom -->
+	{% block scripts_bottom %}
+	{% endblock %}
+</body>
+</html>

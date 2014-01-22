@@ -31,8 +31,8 @@ class PostAdmin(admin.ModelAdmin):
 			}
 		),
 	]
-	list_display       = ('titulo', 'usuario', 'categoria', 'estado', 'creado', 'modificado')
-	list_editable      = ('estado',)
+	list_display       = ('titulo', 'usuario', 'categoria', 'estado', 'destacado', 'creado', 'modificado')
+	list_editable      = ('estado', 'destacado',)
 	list_filter        = ('categoria__nombre', 'estado')
 	search_fields      = ('titulo', 'contenido', 'categoria__nombre', 'usuario__first_name', 'usuario__last_name',)
 	filter_horizontal  = ('tags',)

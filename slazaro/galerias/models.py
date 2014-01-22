@@ -1,9 +1,11 @@
 # -*- encoding: utf-8 -*-
 
 from django.db import models
+from blog.models import Post
 
 class Galeria(models.Model):
 
+	post        = models.ForeignKey(Post, blank = True, null = True)
 	nombre      = models.CharField(max_length = 255)
 	descripcion = models.TextField(u'descripción', blank = True)
 	creado      = models.DateTimeField(u'fecha de creación', auto_now_add = True)

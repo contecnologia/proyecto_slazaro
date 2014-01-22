@@ -1,0 +1,76 @@
+body{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 16px;
+	margin: 0;
+	padding: 0;
+	color: #666;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+/* Bloques Principales */
+
+header.main{
+	background: url('../img/bg_header.jpg') repeat-x center top;
+	height: 112px;
+}
+
+header.main h1.logo{
+	background: url('../img/logo.png') no-repeat center top;
+	display: block;
+	height: 185px;
+	left: 0;
+	margin: 0 auto;
+	position: absolute;
+	right: 0;
+	text-indent: -9999px;
+	top: .25em;
+	width: 137px;
+}
+
+header.main nav.main{
+	/*background: red;*/
+	height: 32px;
+	padding-top: 80px;
+	max-width: 896px;
+	margin: 0 auto;
+}
+
+nav.main li{
+	display: block;
+	/*background: green;*/
+	width: 112px;
+	text-align: center;
+	height: 32px;
+}
+
+nav.main li.left{
+	float: left;
+}
+
+nav.main li.right{
+	float: right;
+}
+
+nav.main a{
+	text-decoration: none;
+	color: white;
+	line-height: 200%;
+}
+
+nav.main a:hover{
+	text-shadow: 2px 2px 2px rgba(0,0,0,.5);
+}
+
+/* Arreglos Generales */
+
+.clear:after{
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}

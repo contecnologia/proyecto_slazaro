@@ -1,0 +1,165 @@
+/* Slider */
+
+section.slider{
+	min-height: 435px;
+	background: url('../img/bg_slider.jpg') no-repeat center top;
+}
+
+div.slider{
+	margin: 0 auto;
+	overflow: hidden;
+}
+
+/* Slides */
+
+.slide1.heading{
+	background: #e18e26;
+	color: white;
+	font-size: 1.5em;
+	font-weight: bold;
+	padding: .5em 1em;
+	width: 221px;
+	height: 24px;
+}
+
+.slide1.text{
+	background: #676f00;
+	padding: .5em 1em;
+	color: white;
+}
+
+/* About */
+
+section.about{
+	max-width: 1280px;
+	margin: 0 auto;
+	padding: 1em 0;
+	background: #eee;
+	position: relative;
+}
+
+section.about h2{
+	font-size: 1.2em;
+}
+
+.about li{
+	display: block;
+	width: 30%;
+	margin: 0 1.667%;
+	float: left;
+	text-align: center;
+	cursor: pointer;
+	background: white;
+}
+
+.about .icon{
+	display: block;
+	width: 90px;
+	height: 90px;
+	background: url('../img/sprites_about.jpg');
+	margin: 1em auto;
+	border-radius: 50%;
+}
+
+.somos .icon{ background-position: 0 -90px; }
+.actividades .icon{ background-position: -90px -90px; }
+.historia .icon{ background-position: -180px -90px; }
+
+.about .display{
+	margin: 1em;
+	height: 190px;
+	position: relative;
+}
+
+.about .display a{
+	text-decoration: none;
+	color: #d2790f;
+	position: absolute;
+	bottom: 0;
+	right: 2em;
+}
+
+/* News */
+
+section.news{
+	max-width: 1280px;
+	margin: 0 auto;
+	padding: 1em 0;
+	background: #E09726;
+	color: #eee;
+}
+
+section.news h2{
+	margin: .5em 1em;
+	font-size: 1.3em;
+}
+
+article.post{
+	float: left;
+	width: 43.5%;
+	position: relative;
+	margin: 2%;
+	background: #ffba54;
+	padding: 1em;
+	color: #fff;
+}
+
+article.post .date{
+	position: absolute;
+	display: block;
+	background: #638610;
+	top: -32px;
+	right: 1em;
+	height: 64px;
+	width: 64px;
+	text-align: center;
+	border: solid 2px rgba(255,255,255,0.5);
+	box-shadow: 0 0 2px rgba(0,0,0,0.5);
+	border-radius: .2em;
+}
+
+article.post .date .month{
+	font-weight: bold;
+	line-height: 250%;
+}
+
+footer.post{
+	margin: 2em 0 0 0;
+	padding-top: 1em;
+	font-size: .9em;
+	border-top: 1px dotted #D2720B;
+}
+
+div.post.content{
+	background: white;
+	margin-top: 1em;
+	padding: 1em;
+	color: #666;
+}
+
+span.icon{
+	display: inline-block;
+	width: 15px;
+	height: 12px;
+	background: url('../img/sprite_news.png');
+	margin: 0 .5em;
+}
+
+.usuario .icon{
+	background-position: 0 0;
+}
+
+.categoria .icon{
+	background-position: -15px 0;
+}
+
+.tags .icon{
+	background-position: -30px 0;
+}
+
+span.tag{
+	display: inline-block;
+	padding: .2em;
+	background: #B15F13;
+	border-radius: .3em;
+}

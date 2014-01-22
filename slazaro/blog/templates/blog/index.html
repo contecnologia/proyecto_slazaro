@@ -1,0 +1,127 @@
+{% extends "base.html" %}
+
+{% block css %}
+	<link rel="stylesheet" href="{{STATIC_URL}}css/index.css">
+	<link rel="stylesheet" href="{{STATIC_URL}}css/fractionslider.css">
+{% endblock %}
+
+{% block scripts_top %}
+	<script src="{{STATIC_URL}}js/jquery.fractionslider.js"></script>
+{% endblock %}
+
+{% block main_content %}
+<section class="slider">
+	<div class="slider">
+		<div class="slide">
+			<img 	
+				src="{{STATIC_URL}}img/slider/slide1.png"
+				width="290" height="435"			
+				data-delay="200"
+				data-in="fade"
+				data-out="fade"
+				data-out="left"
+				data-position="0,0"
+				data-step="0"
+			>
+			<p
+				class="slide1 heading"
+				data-delay="50"
+				data-in="left"
+				data-position="62,720"
+				data-step="0"
+			>La lepra es Curable</p>
+			<p
+				class="slide1 text"
+				data-delay="50"
+				data-in="fade"
+				data-position="116, 737"
+				data-step="1"
+			>Aprendamos de la Enfermedad</p>
+			<p
+				class="slide1 text"
+				data-delay="50"
+				data-in="fade"
+				data-position="156,698"
+				data-step="1"
+			>Acabemos con las Falsas Creencias</p>
+		</div>
+		<div class="slide">
+			<p>PRUEBA</p>
+		</div>
+		<div class="fs_loader"></div>
+	</div>
+</section>
+<section class="about">
+	<ul class="clear">
+		<li class="somos">
+			<span class="icon"></span>
+			<h2>¿Quienes Somos?</h2>
+			<div class="display">
+				<p>La Orden Militar y Hospitalaria de San Lázaro de Jerusalén es una de la Ordenes de Caballería que sobrevivió de la caída del reino de Jerusalén y el intento por los caballeros cruzados de ganar el control de Tierra Santa de las fuerza del Islam. En teoría la orden permaneció como militar, pero con la excepción de un breve periodo en el siglo XVII  no jugó un papel militar después de 1291.</p>
+				<a href="#">Leer Más...</a>
+			</div>
+		</li>
+		<li class="actividades">
+			<span class="icon"></span>
+			<h2>Actividades Humanitarias</h2>
+			<div class="display">
+				<p>El principal propósito de la Orden siempre ha sido la caridad, el cuidado de enfermos y la reafirmación de la cristiandad. La Orden Militar y Hospitalaria de San Lázaro de Jerusalén ha sido mundialmente reconocida por sus labores altruistas dirigidas al cuidado de los enfermos a través de la operación de clínicas de diversos tipos y hospitales.</p>
+				<a href="#">Leer Más...</a>
+			</div>
+		</li>
+		<li class="historia">
+			<span class="icon"></span>
+			<h2>Historia</h2>
+			<div class="display">
+				<p>Fue en 1098 durante la primera cruzada cristiana que conquistó Jerusalén cuando la Orden de  San Lázaro surgió como una Orden Militar y Hospitalaria, una institución dedicada al cuidado y alivio de los enfermos de lepra  así como de otras enfermedades igualmente temidas.</p>
+				<a href="#">Leer Más...</a>
+			</div>
+		</li>
+	</ul>
+</section>
+<section class="news clear">
+	<h2>Últimas Noticias</h2>
+	{% for post in posts %}
+		<article class="post">
+			<header class="post">
+				<div class="date">
+					<span class="month">{{ post.creado|date:"b"|capfirst }}</span><br>
+					<span class="day">{{ post.creado|date:"d" }}</span>
+				</div>
+				<h3>{{ post.titulo }}</h3>
+			</header>
+			<div class="post content">
+				{{ post.contenido }}
+			</div>
+			<footer class="post">
+				<span class="usuario"><span class="icon"></span>{{ post.usuario }}</span>
+				<span class="categoria"><span class="icon"></span>{{ post.categoria }}</span>
+				<span class="tags">
+					<span class="icon"></span>
+					{% with post.tags as tags %}
+					    {% for tag in tags.all %}
+					    	<span class="tag">{{ tag.nombre }}</span>
+					    {% endfor %}
+					{% endwith %}
+				</span>
+			</footer>
+		</article>
+	{% endfor %}
+</section>
+{% endblock %}
+
+{% block scripts_bottom %}
+	<script src="{{STATIC_URL}}js/main.js"></script>
+	<script>
+	(function(){
+		$(".about li").on('click', function(){
+			$this = $(this);
+			scroll_y = $(window).scrollTop()
+
+			$('html').animate({
+				scrollTop: $this.offset().top
+			}, 500);
+		})
+	})();
+	</script>
+{% endblock scripts_bottom %}
