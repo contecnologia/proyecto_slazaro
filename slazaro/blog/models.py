@@ -5,7 +5,7 @@ from django.conf import settings
 
 class Categoria(models.Model):
 
-	nombre      = models.CharField(max_length = 100)
+	nombre      = models.CharField(u'categoría', max_length = 100)
 	descripcion = models.TextField(u'descripción', blank = True)
 	creado      = models.DateTimeField(u'fecha de creación', auto_now_add = True)
 	modificado  = models.DateTimeField(u'última modificación', auto_now = True)
