@@ -32,8 +32,8 @@ class PostAdmin(admin.ModelAdmin):
 		),
 	]
 	list_display       = ('titulo', 'usuario', 'categoria', 'estado', 'destacado', 'creado', 'modificado')
-	list_editable      = ('estado', 'destacado',)
-	list_filter        = ('categoria__nombre', 'estado')
+	list_editable      = ('estado',)
+	list_filter        = ('categoria__nombre', 'estado',)
 	search_fields      = ('titulo', 'contenido', 'categoria__nombre', 'usuario__first_name', 'usuario__last_name',)
 	filter_horizontal  = ('tags',)
 	readonly_fields    = ('creado', 'modificado')
@@ -46,6 +46,14 @@ class PostAdmin(admin.ModelAdmin):
 			obj.usuario = request.user
 
 		obj.save()
+
+
+	class Media:
+
+		js = [
+			'/static/js/tinymce/tinymce.min.js',
+			'/static/js/tinymce/config.js',
+		]
 
 
 admin.site.register(Categoria)
