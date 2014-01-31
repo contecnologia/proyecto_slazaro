@@ -1,0 +1,174 @@
+section.container.blog{
+	max-width: 1280px;
+	margin: 0 auto;
+	background: #E09726;
+}
+
+div.posts{
+	float: left;
+	width: 65%;
+	margin: 2em 1em 2em 2em;
+}
+
+article.post{
+	background: #FFBA54;
+	padding: 1em 2em;
+	position: relative;
+	color: #FFFFFF;
+	margin-bottom: 1em;
+}
+
+div.post.content{
+	padding: 1em;
+	background: white;
+	color: #333;
+}
+
+article.post .date{
+	display: block;
+	background: #638610;
+	border: solid 3px #fff;
+	position: absolute;
+	right: 3em;
+	top: 4em;
+	width: 3em;
+	height: 3em;
+	text-align: center;
+	padding-top: .5em;
+	font-weight: bold;
+	box-shadow: 0 0 3px rgba(0,0,0,0.5);
+}
+
+article.post h3{
+	margin: 1em 0;
+	font-size: 1.5em;
+	text-shadow: 2px 2px 2px rgba(0,0,0,0.5);
+}
+
+article.post a{
+	text-decoration: none;
+	color: #fff;
+}
+
+article.post a.ver{
+	float: right;
+	display: block;
+	margin: .5em;
+	text-shadow: 2px 2px 2px rgba(0,0,0,0.5);
+}
+
+
+span.icon{
+	display: inline-block;
+	width: 15px;
+	height: 12px;
+	background: url('../img/sprite_news.png');
+	margin: 0 .5em;
+}
+
+.usuario,
+.categoria{
+	text-shadow: 1px 1px 1px rgba(0,0,0,0.5);
+}
+
+.usuario .icon{
+	background-position: 0 0;
+}
+
+.categoria .icon{
+	background-position: -15px 0;
+}
+
+.tags .icon{
+	background-position: -30px 0;
+}
+
+span.tag{
+	display: inline-block;
+	padding: .2em;
+	background: #B15F13;
+	border-radius: .3em;
+}
+
+footer.post{
+	margin: 2em 0 0 0;
+	padding-top: 1em;
+	font-size: .9em;
+	border-top: 1px dotted #D2720B;
+}
+
+div.pagination{
+	padding: 0 2em;
+	color: #fff;
+	font-size: .8em;
+	font-weight: bold;
+}
+
+div.pagination a{
+	color: #fff;
+}
+
+div.sidebar{
+	float: right;
+	width: 28%;
+	background: #FFBA54;
+	margin: 2em 2em 0 0;
+}
+
+div.sidebar > *{
+	padding: 1em;
+	background: #fff;
+	margin: 1em;
+}
+
+div.sidebar h4{
+	margin: 0 0 1em 0;
+	padding: 0 0 1em 0;
+	border-bottom: dotted 2px #B15F13;
+}
+
+div.categorias ul,
+div.tags ul{
+	list-style: none;
+}
+
+div.categorias li,
+div.tags li{
+	display: block;
+	float: left;
+	margin: .25em .5em;
+	padding: .25em .5em;
+	background: #B15F13;
+	border-radius: .5em;
+}
+
+div.categorias a,
+div.tags a{
+	color: white;
+	text-decoration: none;
+}
+
+div.buscador{
+	background: #B15F13;
+}
+
+div.buscador input[type="text"]{
+	width: 90%;
+	border: none;
+	padding: .45em;
+}
+
+div.buscador input[type="submit"]{
+	float: right;
+	width: 10%;
+	border: none;
+	height: 30px;
+	background: #638610 url("../img/search.png") no-repeat;
+	text-indent: -9999px;
+}
+
+div.buscador input[type="submit"]:hover{
+	background: #E09726 url("../img/search.png") no-repeat;
+}
+/* Arreglos Generales */
+

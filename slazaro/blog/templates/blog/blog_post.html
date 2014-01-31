@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+{% block css %}
+    <link rel="stylesheet" href="{{ STATIC_URL }}css/blog.css">
+{% endblock %}
+
+{% block main_content %}
+    <section class="container blog clear">
+        <div class="posts">
+            <article class="post">
+                <header class="post">
+                    <div class="date">
+                        <span class="month">{{ post.creado|date:"b"|capfirst }}</span><br>
+                        <span class="day">{{ post.creado|date:"d" }}</span>
+                    </div>
+                    <h3>{{ post.titulo }}</h3>
+                </header>
+                <div class="post content">
+                    {{ post.contenido|safe }}
+                </div>
+                <footer class="post">
+                    <span class="usuario"><span class="icon"></span>{{ post.usuario }}</span>
+                    <span class="categoria">
+                    	<span class="icon"></span>
+                    	<a href="{% url 'blog_cat' post.categoria_id %}">{{ post.categoria }}</a>
+                	</span>
+                    <span class="tags">
+                        <span class="icon"></span>
+                        {% with post.tags as tags %}
+                            {% for tag in tags.all %}
+                                <span class="tag"><a href="{% url 'blog_tag' tag.id %}">{{ tag.nombre }}</a></span>
+                            {% endfor %}
+                        {% endwith %}
+                    </span>
+                </footer>
+            </article>
+        </div>
+        <div class="sidebar">
+            <div class="buscador">
+                <form id="forma-busqueda" action="#" method="get">
+                    <p>
+                        <input type="text" name="busqueda">
+                        <input type="submit" name="buscar" value="buscar">
+                    </p>
+                </form>
+            </div>
+            <div class="categorias">
+                <h4>Categorias</h4>
+                <ul class="clear">
+                {% for categoria in categorias %}
+                    <li><a href="{% url 'blog_cat' categoria.id %}">{{ categoria.nombre }}</a></li>
+                {% endfor %}
+                </ul>
+            </div>
+            <div class="tags">
+                <h4>Tags</h4>
+                <ul class="clear">
+                {% for tag in tags %}
+                    <li><a href="{% url 'blog_tag' tag.id %}">{{ tag.nombre }}</a></li>
+                {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </section>
+{% endblock %}
