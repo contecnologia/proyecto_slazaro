@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load blog_extras %}
 
 {% block css %}
 	<link rel="stylesheet" href="{{STATIC_URL}}css/index.css">
@@ -91,7 +92,7 @@
 				<h3>{{ post.titulo }}</h3>
 			</header>
 			<div class="post content">
-				{{ post.contenido }}
+				{{ post.contenido|removetags:"img"|slicemark:"<p><!-- pagebreak --></p>"|safe }}
 			</div>
 			<footer class="post">
 				<span class="usuario"><span class="icon"></span>{{ post.usuario }}</span>

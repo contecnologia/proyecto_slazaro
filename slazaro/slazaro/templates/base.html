@@ -1,15 +1,14 @@
-<!doctype html>
 <html lang="es-MX">
 <head>
 	<meta charset="UTF-8">
 	<title>San Lazaro</title>
 	<!-- Hojas de Estilo -->
-	<link rel="stylesheet" href="{{STATIC_URL}}css/main.css">
+	<link rel="stylesheet" href="{{ STATIC_URL }}css/main.css">
 	<!-- Hojas de Estilo por Página -->
 	{% block css %}
 	{% endblock %}
 	<!-- Scripts General -->
-	<script src="{{STATIC_URL}}js/jquery-1.9.0.min.js"></script>
+	<script src="{{ STATIC_URL }}js/jquery-1.9.0.min.js"></script>
 	<!-- Scripts Top -->
 	{% block scripts_top %}
 	{% endblock %}
@@ -19,12 +18,12 @@
 		<h1 class="logo">San Lazaro</h1>
 		<nav class="main">
 			<ul>
-				<li class="left"><a href="#">Inicio</a></li>
-				<li class="left"><a href="#">Miembros</a></li>
-				<li class="left"><a href="#">Testimonios</a></li>
-				<li class="right"><a href="#">Contacto</a></li>
-				<li class="right"><a href="#">Donaciones</a></li>
-				<li class="right"><a href="#">Blog</a></li>
+				<li class="left"><a href="{% url 'index' %}">Inicio</a></li>
+				<li class="left"><a href="{% url 'miembros' %}">Miembros</a></li>
+				<li class="left"><a href="{% url 'testimonios' %}">Testimonios</a></li>
+				<li class="right"><a href="{% url 'contacto' %}">Contacto</a></li>
+				<li class="right"><a href="{% url 'donaciones' %}">Donaciones</a></li>
+				<li class="right"><a href="{% url 'blog' %}">Blog</a></li>
 			</ul>
 		</nav>
 	</header>
@@ -32,6 +31,69 @@
 		{% block main_content %}
 		{% endblock %}
 	</section>
+	<footer class="main clear">
+		<div class="left">
+			<h3>Organización Militar y Hospitalaria San Lazaro</h3>
+			<ul class="datos-contacto">
+				<li>
+					Direccion:<br>
+					<span>
+						Dirreción de prueba #1234<br>
+					</span>
+					<span>
+						Col. Otra prueba C.P. 12345	<br>
+					</span>
+					<span>
+						México D.F. Del. Prueba
+					</span>
+				</li>
+				<li>
+					Teléfono:<br>
+					<span>
+						+52 (55)5512-3456
+					</span>
+				</li>
+				<li>
+					Fax:<br>
+					<span>
+						+52 (55)5512-3457
+					</span>
+				</li>
+			</ul>
+			<ul class="socialmedia clear">
+				<li><a class="facebook" href="#">Facebook</a></li>
+				<li><a class="twitter" href="#">Twitter</a></li>
+				<li><a class="gplus" href="#">Google plus</a></li>
+			</ul>
+		</div>
+		<div class="right">
+			<form class="contacto-rapido" action="#" method="POST">
+				<p>
+					<label for="nombre">Nombre:</label>
+					<input type="text" name="nombre" id="nombre">
+				</p>
+				<p>
+					<label for="email">E-mail:</label>
+					<input type="text" name="email" id="email">
+				</p>
+				<p>
+					<label for="telefono">Telefono:</label>
+					<input type="text" name="telefono" id="telefono">
+				</p>
+				<p>
+					<label for="asunto">Asunto:</label>
+					<input type="text" name="asunto" id="asunto">
+				</p>
+				<p>
+					<label for="mensaje">Mensaje</label>
+					<textarea name="mensaje" id="mensaje"></textarea>
+				</p>
+				<p>
+					<input type="submit" name="submit" value="Enviar">
+				</p>
+			</form>
+		</div>
+	</footer>
 	<!-- Scripts Bottom -->
 	{% block scripts_bottom %}
 	{% endblock %}
