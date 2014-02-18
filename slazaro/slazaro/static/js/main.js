@@ -6,7 +6,7 @@ $(window).load(function(){
 		'responsive'        : true,
 		'dimensions'        : "1000,435",
 	    'increase'          : false,
-		'pauseOnHover'      : true,
+		'pauseOnHover'      : false,
 		'slideEndAnimation' : true,
 		'timeout'           : 4000,
 	});
