@@ -67,7 +67,8 @@
 			</ul>
 		</div>
 		<div class="right">
-			<form class="contacto-rapido" action="#" method="POST">
+			<form class="contacto-rapido" action="{% url 'contacto' %}" method="POST">
+				{% csrf_token %}
 				<p>
 					<label for="nombre">Nombre:</label>
 					<input type="text" name="nombre" id="nombre">
