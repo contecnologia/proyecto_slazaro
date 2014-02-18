@@ -1,7 +1,8 @@
 # -*- encoding: utf-8 -*-
 
+from django.core.mail import send_mail, BadHeaderError 
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render, get_object_or_404
 from blog.models import Post, Categoria, Tag
 
@@ -22,7 +23,7 @@ def miembros(request):
 		'post' : post,
 	}
 
-	return render(request, 'blog/miembros.html', context)
+	return render(request, 'blog/secciones.html', context)
 
 
 def testimonios(request):
@@ -32,7 +33,7 @@ def testimonios(request):
 		'post' : post,
 	}
 
-	return render(request, 'blog/miembros.html', context)
+	return render(request, 'blog/secciones.html', context)
 
 
 def donaciones(request):
@@ -42,12 +43,47 @@ def donaciones(request):
 		'post' : post,
 	}
 
-	return render(request, 'blog/donaciones.html', context)
+	return render(request, 'blog/secciones.html', context)
 
 
 def contacto(request):
 
-	return render(request, 'blog/contacto.html')
+	if request.method == 'POST':
+
+		nombre     = request.POST.get('nombre')
+		email      = request.POST.get('email')
+		telefono   = request.POST.get('telefono')
+		asunto     = request.POST.get('asunto')
+		mensaje_d  = request.POST.get('mensaje')
+		mensaje    = """
+		Nombre   : %s
+		E-Mail   : %s
+		Telefono : %s
+		Asunto   : %s
+		Mensaje  :
+		%s
+		""" % (nombre, email, telefono, asunto, mensaje_d)
+
+		if nombre and email and asunto and mensaje_d:
+
+			try:
+
+				send_mail(asunto, mensaje, email, ['ernesto@contecnologia.com'], fail_silently = False)
+
+			except BadHeaderError:
+
+				return HttpResponse("Error en las cabeceras del email.")
+
+
+			return HttpResponseRedirect('/contacto/gracias/')
+
+		else:
+
+			return HttpResponse("Faltan Datos")
+
+	else:
+
+		return render(request, 'blog/contacto.html')
 
 
 # Vistas del blog
@@ -94,7 +130,7 @@ def blog_post(request, post_id):
 
 def blog_cat(request, cat_id):
 
-	posts_list = Post.objects.filter(categoria__id = cat_id)
+	posts_list = Post.objects.filter(categoria__id = cat_id).order_by('-modificado')
 	paginator = Paginator(posts_list, 5)
 	page = request.GET.get('page')
 
@@ -123,7 +159,7 @@ def blog_cat(request, cat_id):
 
 def blog_tag(request, tag_id):
 
-	posts_list = Post.objects.filter(tags__id = tag_id)
+	posts_list = Post.objects.filter(tags__id = tag_id).order_by('-modificado')
 	paginator = Paginator(posts_list, 5)
 	page = request.GET.get('page')
 
