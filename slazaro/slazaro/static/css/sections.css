@@ -1,0 +1,9 @@
+section.seccion{
+	max-width: 1280px;
+	margin: 0 auto;
+	padding-top: 4em;
+}
+
+section.seccion > *{
+	margin: 1em;
+}
