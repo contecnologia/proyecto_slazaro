@@ -4,7 +4,7 @@ $(window).load(function(){
 		'controls'          : true, 
 		'pager'             : true,
 		'responsive'        : true,
-		'dimensions'        : "1000,435",
+		'dimensions'        : "1280,435",
 	    'increase'          : false,
 		'pauseOnHover'      : false,
 		'slideEndAnimation' : true,
