@@ -1,8 +1,10 @@
 /* Slider */
 
 section.slider{
-	min-height: 435px;
+	max-height: 435px;
 	background: url('../img/bg_slider.jpg') no-repeat center top;
+	max-width: 1280px;
+	margin: 0 auto;
 }
 
 div.slider{
@@ -67,7 +69,7 @@ section.about h2{
 
 .about .display{
 	margin: 1em;
-	height: 190px;
+	min-height: 250px;
 	position: relative;
 }
 
@@ -100,7 +102,7 @@ article.post{
 	position: relative;
 	margin: 2%;
 	background: #ffba54;
-	padding: 1em;
+	padding: 1%;
 	color: #fff;
 }
 
@@ -132,8 +134,8 @@ footer.post{
 
 div.post.content{
 	background: white;
-	margin-top: 1em;
-	padding: 1em;
+	margin-top: 2%;
+	padding: 2%;
 	color: #666;
 }
 
@@ -142,7 +144,7 @@ span.icon{
 	width: 15px;
 	height: 12px;
 	background: url('../img/sprite_news.png');
-	margin: 0 .5em;
+	margin: 0 1%;
 }
 
 .usuario .icon{
@@ -163,3 +165,24 @@ span.tag{
 	background: #B15F13;
 	border-radius: .3em;
 }
+
+@media screen and (max-width: 1000px){
+
+	.about .display{
+		margin: 1em;
+		min-height: 300px;
+		position: relative;
+	}
+
+	article.post{
+		float: left;
+		width: 94.5%;
+		position: relative;
+		margin: 2%;
+		background: #ffba54;
+		padding: 1%;
+		color: #fff;
+	}
+
+}
+
