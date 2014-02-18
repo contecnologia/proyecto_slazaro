@@ -1,6 +1,7 @@
 # -*- encoding: utf-8 -*-
 
 from django.conf.urls import patterns, include, url
+from django.views.generic import TemplateView
 from blog import views
 
 urlpatterns = patterns('',
@@ -9,6 +10,7 @@ urlpatterns = patterns('',
 	url(r'^testimonios/$', views.testimonios, name = 'testimonios'),
 	url(r'^donaciones/$', views.donaciones, name = 'donaciones'),
 	url(r'^contacto/$', views.contacto, name = 'contacto'),
+	url(r'^contacto/gracias/$', TemplateView.as_view(template_name = 'gracias.html')),
 
 	# URLs del Blog
 	url(r'^blog/$', views.blog_index, name = "blog"),                             # Vista del Blog
