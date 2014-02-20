@@ -186,3 +186,33 @@ span.tag{
 
 }
 
+/*Feed*/
+
+section.news > div{
+	margin: 0 2em;
+	background: #F2BE51;
+	padding: 1em;
+	max-height: 600px;
+	overflow: auto;
+}
+
+section.news h4{
+	margin: 1em 0;
+	text-shadow: 0 0 2px rgba(0,0,0,0.5);
+}
+
+div[dir="ltr"]{
+	background: white;
+	color: #333;
+	padding: 1em;
+}
+
+div[dir="ltr"] p{
+	margin: 1em 0;
+}
+
+.feed-item-title a{
+	font-size: 1.4em;
+	text-decoration: none;
+	color: white;
+}

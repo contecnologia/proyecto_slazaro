@@ -1,7 +1,72 @@
 {% extends "base.html" %}
 
+{% block css %}
+	<link rel="stylesheet" href="{{ STATIC_URL }}css/sections.css">
+{% endblock %}
+
 {% block main_content %}
-	<section class="contacto">
-		<h2>Seccion de Contacto</h2>
+	<section class="contacto clear">
+		<h2>Contactanos</h2>
+		<div class="info">
+			<p>
+				Gracias por visitar esta su página, si tiene alguna duda no dude en llenar esta forma y enseguida nos comunicaremos con usted.
+			</p>
+			<ul>
+				<li>
+					Direccion:<br>
+					<span>
+						Dirreción de prueba #1234<br>
+					</span>
+					<span>
+						Col. Otra prueba C.P. 12345	<br>
+					</span>
+					<span>
+						México D.F. Del. Prueba
+					</span>
+				</li>
+				<li>
+					Teléfono:<br>
+					<span>
+						+52 (55)5512-3456
+					</span>
+				</li>
+				<li>
+					Fax:<br>
+					<span>
+						+52 (55)5512-3457
+					</span>
+				</li>
+			</ul>
+		</div>
+		<form action="{% url 'contacto' %}" method="post">
+			{% csrf_token %}
+			<p>
+				<label for="nombre">Nombre:</label>
+				<input type="text" name="nombre" id="nombre">
+			</p>
+			<p>
+				<label for="email">Email:</label>
+				<input type="text" name="email" id="email">
+			</p>
+			<p>
+				<label for="telefono">Teléfono:</label>
+				<input type="text" name="telefono" id="telefono">
+			</p>
+			<p>
+				<label for="asunto">Asunto:</label>
+				<input type="text" name="asunto" id="asunto">
+			</p>
+			<p>
+				<label for="mensaje">Nombre:</label>
+				<textarea name="mensaje" id="mensaje"></textarea>
+			</p>
+			<p>
+				<input type="submit" name="submit" value="Enviar">
+			</p>
+		</form>
 	</section>
+{% endblock %}
+
+{% block footer %}
+	
 {% endblock %}

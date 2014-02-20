@@ -24,3 +24,52 @@ img.orden{
 	border: solid 5px white;
 	box-shadow: 0 0 2px rgba(0,0,0,0.5)
 }
+
+
+/*Contacto*/
+
+section.contacto{
+	max-width: 1000px;
+	margin: 0 auto;
+	padding: 5em 0;
+}
+
+section.contacto form{
+	float: right;
+	width: 55%;
+	padding: 2.5%;
+}
+
+section.contacto input[type="text"]{
+	display: block;
+	width: 100%;
+	max-width: 450px;
+}
+
+section.contacto input[type="submit"]{
+	width: 100%;
+	max-width: 450px;
+	float: right;
+}
+
+section.contacto textarea{
+	width: 100%;
+	max-width: 450px;
+	min-height: 200px;
+}
+
+section.contacto label{
+	float: left;
+	display: block;
+	width: 96px;
+}
+
+section.contacto div.info{
+	width: 35%;
+	float: left;
+	padding: 2.5%;
+}
+
+div.info{
+	
+}

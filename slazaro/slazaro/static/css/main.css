@@ -162,14 +162,6 @@ footer.main .datos-contacto span{
 	margin-left: 2em;
 }
 
-/* Sección Contacto */
-
-section.contacto{
-	max-width: 1000px;
-	margin: 0 auto;
-	padding: 5em 0;
-}
-
 /* Arreglos Generales */
 
 .clear:after{
