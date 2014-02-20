@@ -50,7 +50,7 @@ section.about h2{
 	margin: 0 1.667%;
 	float: left;
 	text-align: center;
-	cursor: pointer;
+	/*cursor: pointer;*/
 	background: white;
 }
 
