@@ -181,9 +181,9 @@ section.contacto{
 }
 
 img[style="float: left;"]{
-	padding: 0 1em 1em 0;
+	margin: 0 1em 1em 0;
 }
 
 img[style="float: right;"]{
-	padding: 0 0 1em 1em;
+	margin: 0 0 1em 1em;
 }

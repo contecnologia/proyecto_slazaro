@@ -10,8 +10,8 @@ urlpatterns = patterns('',
 	url(r'^testimonios/$', views.testimonios, name = 'testimonios'),
 	url(r'^donaciones/$', views.donaciones, name = 'donaciones'),
 	url(r'^contacto/$', views.contacto, name = 'contacto'),
+	url(r'^somos/$', TemplateView.as_view(template_name = 'somos.html'), name = 'somos'),
 	url(r'^contacto/gracias/$', TemplateView.as_view(template_name = 'gracias.html')),
-
 	# URLs del Blog
 	url(r'^blog/$', views.blog_index, name = "blog"),                             # Vista del Blog
 	url(r'^(?P<post_id>\d+)/blog/$', views.blog_post, name = 'blog_post'),        # Vista de Post

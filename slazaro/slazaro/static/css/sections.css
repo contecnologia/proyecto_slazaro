@@ -7,3 +7,20 @@ section.seccion{
 section.seccion > *{
 	margin: 1em;
 }
+
+section.somos{
+	padding: 3em 2em 2em 2em;
+	max-width: 1216px;
+	margin: 0 auto;
+	text-align: justify;
+	background: #f1f1f1;
+}
+
+p, h2, h3, h4, h5{
+	margin: 1em 0;
+}
+
+img.orden{
+	border: solid 5px white;
+	box-shadow: 0 0 2px rgba(0,0,0,0.5)
+}
